@@ -1,7 +1,5 @@
-package com.company.models;
-import java.lang.reflect.Array;
+package com.company.ejercicio1.models;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
