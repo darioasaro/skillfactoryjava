@@ -19,7 +19,5 @@ public class Main {
 
     }
 
-    public static void removeEvenLength(ArrayList<String> words){
-       words.removeIf(word -> word.length() % 2 == 0);
-    }
+    public static void removeEvenLength(ArrayList<String> words){ words.removeIf(word -> word.length() % 2 == 0);}
 }

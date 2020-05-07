@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         //***Uncomment to test!***
-      /*  Marathon mardel10k = new Marathon(10.0);
+    /*    Marathon mardel10k = new Marathon(10.0);
         mardel10k.addCompetitor(new Human("Dario"));
         mardel10k.addCompetitor(new Human("Mauro"));
         mardel10k.addCompetitor(new Robot("R2d2"));

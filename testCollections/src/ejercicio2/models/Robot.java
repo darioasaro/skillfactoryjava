@@ -2,12 +2,12 @@ package ejercicio2.models;
 
 public class Robot extends Species implements Sprintable {
     public Robot(String name){
-        super(name,8.0);
+        super(name,10.0);
     }
 
     @Override
     public Double getVelocity() {
-        return (Double)(Math.random() * ((10.0 - velocity) + 1)) + velocity;
+        return (Double)(Math.random() * ((25.0 - velocity) + 1)) + velocity;
     }
 
     @Override
