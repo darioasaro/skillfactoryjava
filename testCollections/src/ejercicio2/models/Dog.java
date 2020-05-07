@@ -7,11 +7,16 @@ public class Dog extends Species implements Sprintable{
 
     @Override
     public Double getVelocity() {
-        return (Double)(Math.random() * ((10.0 - getVelocity()) + 1)) + getVelocity();
+        return (Double)(Math.random() * ((10.0 - velocity) + 1)) + velocity;
     }
 
     @Override
     public Double run(Double distance) {
         return (distance / getVelocity());
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }

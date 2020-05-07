@@ -3,9 +3,16 @@ package com.company.ejercicio1;
 import com.company.ejercicio1.models.Alumn;
 import com.company.ejercicio1.models.TestSet;
 
+
+/*Crear 3 clases. Cada una contiene una implementación (a elección) de las interfaces List, Map y Set. Cargarlas con objetos(String,
+        Integer u objetos propios si gusta) y luego realizar las operaciones básicas en cada una (obtener, eliminar, leer e imprimir, iterar sobre
+        la colección e imprimir todos sus elementos uno a uno (iterar de 2 formas diferentes al menos)). También ordenar e invertir el orden de
+        los elementos en la/s colección/es que sea posible.*/
+
 public class Main {
 
     public static void main(String[] args) {
+        //***Uncomment to test!***
 
     /*
         //Test List//
@@ -40,7 +47,7 @@ public class Main {
 
         // Test Set//
 
-        TestSet set = new TestSet();
+      /*  TestSet set = new TestSet();
         set.addAlumn(new Alumn("Dario",34));
         set.addAlumn(new Alumn("Luciana",28));
         set.addAlumn(new Alumn("Juan Cruz",19));
@@ -56,7 +63,7 @@ public class Main {
         else{
             System.out.println("No borraste a Dario");
         }
-        set.printHashSet();
+        set.printHashSet();*/
 
 
 

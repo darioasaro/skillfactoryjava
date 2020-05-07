@@ -4,7 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TestMap {
-    private Map<String,String> strMap = new HashMap<>();
+    private Map<String,String> strMap ;
+
+    public TestMap(){
+        strMap = new HashMap<>();
+    }
 
     public void addToMap(String key,String value){
 
@@ -40,19 +44,21 @@ public class TestMap {
 
 
     //*** Check this method ***
-    public String getValue(String key){
-        String result = "";
-        try {
-            result = strMap.get(key);
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+    public String getValue(String key) {
 
-        if(result == null){result = "Key not match in map";}
+           return strMap.get(key);
 
-        return result;
     }
 
+    public static void main(String[] args) {
+        TestMap mapper = new TestMap();
+        mapper.addToMap("Dario", "darioasaro29@gmail.com");
+        mapper.addToMap("Luciana", "ludimeglio27@gmail.com");
+        mapper.addToMap("Testing", "testingmdq@gmail.com");
+        mapper.printMapWithLambda();
+        mapper.removeToMap("Dario");
+        System.out.println(mapper.getValue("Dario"));
+        mapper.printMapWithStreams();
 
+    }
 }
