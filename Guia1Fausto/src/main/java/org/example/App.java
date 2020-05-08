@@ -1,10 +1,12 @@
 package org.example;
 
+import org.example.utils.Utils;
+
 /**
  * Hello world!
  *
  */
-public class App 
+public class App
 {
     public static boolean isPalindrome(String word){
         StringBuilder reverse = new StringBuilder(word.replace(" ","")).reverse();
@@ -13,6 +15,6 @@ public class App
     public static void main( String[] args )
     {
 
-        System.out.println( "Hello World!" );
+        Utils.lastToFirst("hola soy la cadena que, hay que  dividir ");
     }
 }
