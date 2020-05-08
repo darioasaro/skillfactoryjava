@@ -10,11 +10,64 @@ public class Utils {
         return (reverse.toString()).equalsIgnoreCase(word.replace(" ",""));
     }
     public static String lastToFirst(String word){
-        String [] arrayWord = word.split("[^\\s\"']+|\"[^\"]*\"|'[^']*'");
+        String [] arrayWord = word.split("\'[^']*'|\\\"[^\\\"]*\\\"|( )");
+        int quantity = arrayWord.length;
+        String result="";
+        for(int i = quantity-1;i>=0;i--){
+            result = result+" "+arrayWord[i];
+        }
+        return result;
 
-        return "hola";
     }
-    /*public static Integer romanToInteger(String romanNumber){
+    public static String countCharacters(String phrase){
+        int spaceQuantity = 0;
+        int charQuantity = 0;
+        int numberQuantity = 0;
+
+        for(int i = 0;i<phrase.length();i++){
+            if(Character.isLetter(phrase.charAt(i))){
+                charQuantity++;
+            }
+            if(Character.isDigit(phrase.charAt(i))){
+                numberQuantity++;
+            }
+            if(Character.isSpaceChar(phrase.charAt(i))){
+                spaceQuantity ++;
+            }
+
+        }
+        return "Digitos: " + numberQuantity + " Letras: " + charQuantity + " Espacios: " + spaceQuantity ;
+    }
+
+    public static String cesarEncryption(String toEncrypt){
+        int length = toEncrypt.length();
+        String encrypted = "Incorrect Characters in String";
+        if(toEncrypt.matches("[a-zA-Z]+")){
+            encrypted = "";
+            for (int i = 0;i<length;i++){
+                int ascii = (int)toEncrypt.charAt(i) + 1;
+                if(ascii == 91){
+                    ascii = 65;
+                }
+                if(ascii == 123){
+                    ascii = 97;
+                }
+                encrypted = encrypted + (char)ascii;
+            }
+        }
+        return encrypted;
+    }
+
+    //need to fix it, allow underscore on first character.//
+    public static boolean checkString ( String check){
+       return check.matches(" (^[a-zA-z0-9])((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[\\w]{8,30})");
+
+    }
+    /*
+                    ***In Progress***
+                    * try to find an algorithm to get correct convertion.
+
+      public static Integer romanToInteger(String romanNumber){
 
         Map<String,Integer> romanTable = new HashMap<String, Integer>();
         {
