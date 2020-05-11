@@ -1,5 +1,6 @@
 package ejercicio6.models;
 
+import java.util.Collections;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -59,4 +60,5 @@ public class ClubMember {
     public void vote(Club club, ClubMember candidate){
         club.addVote(candidate,this);
     }
+
 }

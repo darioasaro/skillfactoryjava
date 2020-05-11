@@ -22,30 +22,45 @@ Crear una clase ClubMember con los siguientes atributos:
 import ejercicio6.models.Club;
 import ejercicio6.models.ClubMember;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
+
     public static void main(String[] args) {
         Club theCrew = new Club("The Crew");
         // Test auto fill list
-        for(int i = 0;i<10;i++){
+      /*  for(int i = 0;i<10;i++){
             ClubMember generic = new ClubMember("Socio"+ i,"123156"+i,22+i);
             theCrew.associate(generic);
-        }
+        }*/
+
+        ClubMember partner1 =  new ClubMember("Dario","123456",25);
+        theCrew.associate(partner1);
+        ClubMember partner2 =  new ClubMember("Luciana","123456",25);
+        theCrew.associate(partner2);
+        ClubMember partner10 = new ClubMember("Electra","123456",25);
+        theCrew.associate(partner10);
+        ClubMember partner3 =  new ClubMember("Humberto","123456",25);
+        theCrew.associate(partner3);
+        ClubMember partner4 =  new ClubMember("Cristina","123456",25);
+        theCrew.associate(partner4);
+        ClubMember partner5 =  new ClubMember("Laura","123456",25);
+        theCrew.associate(partner5);
+        ClubMember partner6 =  new ClubMember("Monica","123456",25);
+        theCrew.associate(partner6);
+        ClubMember partner7 =  new ClubMember("Silvana","123456",25);
+        theCrew.associate(partner7);
+        ClubMember partner8 =  new ClubMember("Juan Cruz","123456",25);
+        theCrew.associate(partner8);
+        ClubMember partner9 =  new ClubMember("Gian","123456",25);
+        theCrew.associate(partner9);
+
         theCrew.printPartners();
         theCrew.initElections();
-    List<ClubMember> members = theCrew.getPartners();
+        //List<ClubMember> members = theCrew.getPartners();
 
-    ClubMember partner1 = members.get(0);
-    ClubMember partner2 = members.get(1);
-    ClubMember partner3 = members.get(2);
-    ClubMember partner4 = members.get(3);
-    ClubMember partner5 = members.get(4);
-    ClubMember partner6 = members.get(5);
-    ClubMember partner7 = members.get(6);
-    ClubMember partner8 = members.get(7);
-    ClubMember partner9 = members.get(8);
-    ClubMember partner10 = members.get(9);
 
     partner1.vote(theCrew,partner2);
     partner2.vote(theCrew,partner3);
@@ -57,11 +72,13 @@ public class Main {
     partner6.vote(theCrew,partner9);
     partner8.vote(theCrew,partner2);
     partner7.vote(theCrew,partner4);
+
         try {
             theCrew.voteCount();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
 
 
     }

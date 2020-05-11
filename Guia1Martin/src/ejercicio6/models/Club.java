@@ -15,10 +15,18 @@ public class Club {
         partners = new ArrayList<>();
     }
 
-    public List<ClubMember> getPartners() { return partners;}
+    public List<ClubMember> getPartners() {
 
-    public boolean associate (ClubMember newMember){
-       return partners.add(newMember);
+        return partners;}
+
+    public  void associate (ClubMember newMember){
+        partners.add(newMember);
+        Collections.sort(partners, new Comparator<ClubMember>() {
+            @Override
+            public int compare(ClubMember p1, ClubMember p2) {
+                return new String (p1.getName()).compareTo(new String(p2.getName()));
+            }
+        });
     }
 
     public boolean giveUp(ClubMember toQuit){
