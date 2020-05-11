@@ -1,23 +1,21 @@
 package org.example.utils;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Utils {
     public static boolean isPalindrome(String word){
         StringBuilder reverse = new StringBuilder(word.replace(" ","")).reverse();
         return (reverse.toString()).equalsIgnoreCase(word.replace(" ",""));
     }
+    //***Refactor with StringBuilder and Collections.reverse ***
     public static String lastToFirst(String word){
-        String [] arrayWord = word.split("\'[^']*'|\\\"[^\\\"]*\\\"|( )");
-        int quantity = arrayWord.length;
-        String result="";
-        for(int i = quantity-1;i>=0;i--){
-            result = result+" "+arrayWord[i];
+        List<String> arrayWord = Arrays.asList(word.split(" "));
+        Collections.reverse(arrayWord);
+        StringBuilder result= new StringBuilder();
+        for(String wordN : arrayWord){
+            result.append(" "+wordN);
         }
-        return result;
-
+        return result.toString();
     }
     public static String countCharacters(String phrase){
         int spaceQuantity = 0;
@@ -60,8 +58,7 @@ public class Utils {
 
     //need to fix it, allow underscore on first character.//
     public static boolean checkString ( String check){
-       return check.matches(" (^[a-zA-z0-9])((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[\\w]{8,30})");
-
+       return check.matches(" (^[a-zA-z0-9])((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[?\\_\\w]{8,30})");
     }
     /*
                     ***In Progress***
