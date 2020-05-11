@@ -1,6 +1,6 @@
-# Skill Factory Java 2020
+# Avalith Skill Factory 2020 
 
-## Avalith 
+## Java-Spring Boot
 
 #### Guides for test and practice Java with Spring Framework
 
