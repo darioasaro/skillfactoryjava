@@ -2,8 +2,6 @@
 
 ## Avalith 
 
-### mar del plata,Argentina
-
 #### Guides for test and practice Java with Spring Framework
 
 
