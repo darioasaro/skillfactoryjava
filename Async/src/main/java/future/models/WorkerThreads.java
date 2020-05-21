@@ -1,6 +1,8 @@
 package future.models;
 
-public class WorkerThreads implements Runnable {
+import java.util.concurrent.Callable;
+
+public class WorkerThreads implements Callable {
  private String name;
  public WorkerThreads(String name){
      this.name = name;
@@ -13,11 +15,18 @@ public class WorkerThreads implements Runnable {
                 '}';
     }
 
+
     @Override
-    public void run() {
-     
+    public Object call() throws Exception {
+        long sum = 0;
+
+        for (long i = 0; i <= 100; i++) {
+
+            sum += i;
+
+        }
+
+        return sum;
 
     }
-
-
 }
