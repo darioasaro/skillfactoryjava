@@ -1,5 +1,6 @@
 package ejercicio6.models;
 
+import java.util.Collections;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -10,12 +11,29 @@ public class ClubMember {
     private Integer age;
     private boolean avaiableToVote;
 
-    public ClubMember(String name,String phone, Integer age) {
+    public boolean isAvaiableToVote() {
+        return avaiableToVote;
+    }
+
+    public void setAvaiableToVote(boolean avaiableToVote) {
+        this.avaiableToVote = avaiableToVote;
+    }
+
+    public ClubMember(String name, String phone, Integer age) {
         this.name = name;
         this.id = UUID.randomUUID();
         this.phone = phone;
         this.age = age;
         avaiableToVote = true;
+    }
+
+    public UUID getId() {
+
+        return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -39,4 +57,8 @@ public class ClubMember {
                 ", phone='" + phone + '\'' +
                 ", age=" + age;
     }
+    public void vote(Club club, ClubMember candidate){
+        club.addVote(candidate,this);
+    }
+
 }
